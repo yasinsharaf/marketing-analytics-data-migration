@@ -55,11 +55,11 @@ def main():
     crm_data = generate_crm_data(30000)
     marketing_attribution_data = generate_marketing_attribution_data(20000)
 
-    connection_string = "mssql+pyodbc://username:password@server/database?driver=ODBC+Driver+17+for+SQL+Server"
+    connection_string = "mssql+pyodbc://sqlserver:testing%40123@34.46.196.232/marketing?driver=ODBC+Driver+17+for+SQL+Server"
 
-    save_to_sql_server(transaction_data, 'TransactionData', connection_string)
-    save_to_sql_server(crm_data, 'CRMData', connection_string)
-    save_to_sql_server(marketing_attribution_data, 'MarketingAttributionData', connection_string)
+    save_to_sql_server(transaction_data, 'crm', connection_string)
+    save_to_sql_server(crm_data, 'transactions', connection_string)
+    save_to_sql_server(marketing_attribution_data, 'attribution', connection_string)
 
 if __name__ == "__main__":
     main()
